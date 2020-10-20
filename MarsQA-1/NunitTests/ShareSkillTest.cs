@@ -1,42 +1,17 @@
 ﻿using MarsQA_1.Helpers;
 using MarsQA_1.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MarsQA_1.Utils;
 using static MarsQA_1.Helpers.CommonMethods;
 
 namespace MarsQA_1.NunitTests
 {
     [TestFixture]
-    class ShareSkillTest:Driver
+    class ShareSkillTest: Start
     {
-        #region Start
-        [SetUp]
-        public void Setup()
-        {
-            //launch the browser
-            Initialize();
-            ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "TestData");
 
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            //Screenshot
-            string img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");
-
-            //Close the browser
-            Close();
-
-        }
-        #endregion
-
-        [Test]//Test Case 006
-        [Category("")]
+        [Test]
+        [Category("TC-010-02")]
         public void AddShareSkill()
         {
             SignIn.OpenForm();
@@ -53,8 +28,8 @@ namespace MarsQA_1.NunitTests
 
         }
 
-        [Test]//Test Case 012
-        [Category("")]
+        [Test]
+        [Category("TC-011-04")]
         public void EditShareSkill()
         {
             SignIn.OpenForm();
@@ -70,11 +45,11 @@ namespace MarsQA_1.NunitTests
             ShareSkillPage.EditShareSkill(3);
 
             //Check if the changes can be seen in the "Manage Listage
-            //CheckListPage.CheckListing(3);
+            ManageListingPage.CheckListing(3);
         }
 
-        [Test]//Test Case 013
-        [Category("")]
+        [Test]
+        [Category("TC-012-01")]
         public void EraseShareSkill()
         {
             SignIn.OpenForm();

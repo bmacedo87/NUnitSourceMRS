@@ -4,7 +4,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Threading;
 
-namespace MarsQA_1.SpecflowPages.Pages
+namespace MarsQA_1.Pages
 {
     class ChangePassword
     {

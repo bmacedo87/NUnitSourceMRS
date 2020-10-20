@@ -1,35 +1,15 @@
 ﻿using MarsQA_1.Helpers;
 using MarsQA_1.Pages;
+using MarsQA_1.Utils;
 using NUnit.Framework;
 using static MarsQA_1.Helpers.CommonMethods;
 
 namespace MarsQA_1.NunitTests
 {
     [TestFixture]
-    class ProfileDetailsTest:Driver
+    class ProfileDetailsTest: Start
     {
-        #region Start
-        [SetUp]
-        public void Setup()
-        {
-            //launch the browser
-            Initialize();
-            ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "TestData");
-
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            //Screenshot
-            string img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");
-
-            //Close the browser
-            Close();
-
-        }
-        #endregion
-
+        
         [Test][Category("TC-003")]
         public static void FillFluidCardDetails()
         {
@@ -39,5 +19,39 @@ namespace MarsQA_1.NunitTests
             ProfilePages.FillCardField();
             ProfilePages.CheckName(2);
         }
+
+        [Test]
+        [Category("TC-008-02")]
+        public static void EditProfileDescription()
+        {
+            SignIn.OpenForm();
+            SignIn.FillCredentials(2);
+            ProfilePages.OpenDescriptionTextfield();
+            ProfilePages.FillDescription(2);
+            ProfilePages.CheckProfileDescription(2);
+        }
+
+        [Test]
+        [Category("TC-009-06")]
+        public static void ChangePasswordWithInvalidPassword()
+        {
+            SignIn.OpenForm();
+            SignIn.FillCredentials(2);
+            ProfilePages.OpenChangePassword();
+            ChangePassword.FillForm(4);
+            ChangePassword.CheckAlert(2);
+        }
+
+        [Test]
+        [Category("TC-009-07")]
+        public static void ChangePasswordWithValidPassword()
+        {
+            SignIn.OpenForm();
+            SignIn.FillCredentials(2);
+            ProfilePages.OpenChangePassword();
+            ChangePassword.FillForm(3);
+            ChangePassword.CheckNewPassword();
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using static MarsQA_1.Helpers.CommonMethods;
 
 namespace MarsQA_1.Utils
 {
+    [TestFixture]
     public class Start : Driver
     {
 

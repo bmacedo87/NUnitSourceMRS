@@ -36,5 +36,10 @@ namespace MarsQA_1.Helpers
                 return false;
             }
         }
+
+        public static void LongWait()
+        {
+            Thread.Sleep(60000);
+        }
     }
 }

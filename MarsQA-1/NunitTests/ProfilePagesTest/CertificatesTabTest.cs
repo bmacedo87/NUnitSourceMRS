@@ -1,6 +1,7 @@
 ﻿using MarsQA_1.Helpers;
 using MarsQA_1.Pages;
 using MarsQA_1.Pages.ProfilePage;
+using MarsQA_1.Utils;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,30 +13,9 @@ using static MarsQA_1.Helpers.CommonMethods;
 namespace MarsQA_1.NunitTests
 {
     [TestFixture]
-    class CertificatesTabTest:Driver
+    class CertificatesTabTest: Start
     {
-        #region Start
-        [SetUp]
-        public void Setup()
-        {
-            //launch the browser
-            Initialize();
-            ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "TestData");
-
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            //Screenshot
-            string img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");
-
-            //Close the browser
-            Close();
-
-        }
-        #endregion
-
+        
         [Test]
         [Category("TC-006-02")]
         public static void AddCertificate()
