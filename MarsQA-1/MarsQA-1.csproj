@@ -162,7 +162,8 @@
     <Compile Include="NunitPages\Pages\HomePage\SignIn.cs" />
     <Compile Include="NunitPages\Pages\ShareSkillPage.cs" />
     <Compile Include="NunitPages\Utils\Start.cs" />
-    <Compile Include="NunitTests\ManageRequestTest.cs" />
+    <Compile Include="NunitTests\ManageRequestTest\ManageSentRequestTest.cs" />
+    <Compile Include="NunitTests\ManageRequestTest\ManageReceivedRequestTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\CertificatesTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\EducationTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\LanguageTabTest.cs" />
