@@ -146,8 +146,10 @@
   <ItemGroup>
     <Compile Include="NunitPages\Helpers\AutoIt.cs" />
     <Compile Include="NunitPages\Helpers\WaitHelper.cs" />
+    <Compile Include="NunitPages\Pages\ChatPage.cs" />
     <Compile Include="NunitPages\Pages\ManageListingPage.cs" />
     <Compile Include="NunitPages\Pages\ManageRequestPage.cs" />
+    <Compile Include="NunitPages\Pages\NotificationsPage.cs" />
     <Compile Include="NunitPages\Pages\ProfilePage\ChangePassword.cs" />
     <Compile Include="NunitPages\Pages\ProfilePage\ProfilePage.cs" />
     <Compile Include="NunitPages\Pages\HomePage\SignUp.cs" />
@@ -163,8 +165,10 @@
     <Compile Include="NunitPages\Pages\SearchSkills.cs" />
     <Compile Include="NunitPages\Pages\ShareSkillPage.cs" />
     <Compile Include="NunitPages\Utils\Start.cs" />
+    <Compile Include="NunitTests\ChatTest.cs" />
     <Compile Include="NunitTests\ManageRequestTest\ManageSentRequestTest.cs" />
     <Compile Include="NunitTests\ManageRequestTest\ManageReceivedRequestTest.cs" />
+    <Compile Include="NunitTests\NotificationsTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\CertificatesTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\EducationTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\LanguageTabTest.cs" />
